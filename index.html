@@ -42,17 +42,17 @@
         <div class="booking-form">
             <h3>Book Ocean Time</h3>
             <div class="input-group">
-                <label for="" id="flying-from">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <label for="">Flying From</label>
+                <input class="inp-style" id="flying-from" type="text" name="" placeholder="Dhake, Bangladesh">
             </div>
             <div class="input-group">
-                <label for="" id="flying-to">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                <label for="">Flying To</label>
+                <input class="inp-style" id="flying-to" type="text" name="" placeholder="New York, United States">
             </div>
             <div class="inputs">
                 <div class="input-group">
                     <label for=" ">Departure</label>
-                    <input class="inp-style " type="date" name="" id="dparture-time">
+                    <input class="inp-style " type="date" name="" id="departure-time">
                 </div>
                 <div class="input-group ">
                     <label for=" ">Return</label>
@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style " id="book-now-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</button>
+            <button class="btn-style " id="book-now-btn">Book Now</button>
         </div>
     </main>
     <!-- Modal -->
@@ -114,15 +114,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Book Ocean Ticket Info</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div id="ticket-info"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="check-out">Check Out</button>
                 </div>
             </div>
         </div>

@@ -29,6 +29,13 @@ const bookNowBtn = document.getElementById('book-now-btn');
 
 //----------------------------------------------
 
+// Flying information
+const flyingFrom = document.getElementById("flying-from");
+const flyingTo = document.getElementById("flying-to");
+const departureTime = document.getElementById("departure-time");
+const returnTime = document.getElementById("return-time");
+const ticketInfoModal = document.getElementById("ticket-info");
+const checkOutBtn = document.getElementById("check-out");
 
 //----------------------------------------------
 
@@ -41,6 +48,21 @@ function getIntegerValue(number) {
     return parseInt(number);
 }
 
+function resetAllField() {
+    flyingFrom.value = null;
+    flyingTo.value = null;
+    departureTime.value = null;
+    returnTime.value = null;
+    noOfTicketEconomy.value = 0;
+    noOfTicketFirstClass.value = 0;
+    subTotalId.innerText = 0;
+    taxId.innerText = 0;
+    totalPriceId.innerText = 0;
+}
+
+function getTicketPrice(quantityOfTicket, priceOfTicket) {
+    return (quantityOfTicket * priceOfTicket).toString();
+}
 
 function getSubTotalPrice() {
     return (getIntegerValue(noOfTicketFirstClass.value) * FIRST_CLASS_TICKET_PRICE) + (getIntegerValue(noOfTicketEconomy.value) * ECONOMY_TICKET_PRICE);
@@ -92,6 +114,36 @@ economyDecrementBtn.addEventListener('click', function(e) {
 // Book now button event handler
 
 bookNowBtn.addEventListener('click', function(e) {
-    alert(e.target.innerText);
-    $("#myModal").modal()
+    // alert(e.target.innerText);
+
+    // error handling
+    if (!(flyingFrom.value && flyingTo.value && departureTime.value && departureTime.value)) {
+        alert('Please Fill-up Flying information & date-time');
+    } else if (getIntegerValue(totalPriceId.innerText) <= 0) {
+        alert('please select no of any ticket class.');
+    } else {
+        //----------------------------------------------------------------------
+
+        let text = `
+        <p><strong>Flying From : </strong> ${flyingFrom.value}</p>
+        <p><strong>Flying To : </strong> ${flyingTo.value}</p>
+        <p><strong>Departure Time : </strong> ${departureTime.value} <strong>Return Time : </strong> ${departureTime.value}</p>
+        <p><strong>No of First Class ticker : </strong> ${noOfTicketFirstClass.value} <strong>Price : </strong>$ ${ getTicketPrice(FIRST_CLASS_TICKET_PRICE , getIntegerValue(noOfTicketFirstClass.value))}</p>
+        <p><strong>No of Economy Class ticker : </strong> ${noOfTicketEconomy.value} <strong>Price : </strong>$ ${ getTicketPrice(ECONOMY_TICKET_PRICE , getIntegerValue(noOfTicketEconomy.value))}</p>
+
+        <hr>
+        <p><strong>Total Price with 10% VAT : </strong>$ ${totalPriceId.innerText}</p>
+
+    `
+        ticketInfoModal.innerHTML = text;
+        $("#exampleModal").modal('show');
+    }
+});
+
+// Checkout Button Event  Handler
+
+checkOutBtn.addEventListener('click', function() {
+    alert('Congratulation, your tickets have been booked successfully. We will response to you by email.Thanks...:)');
+    resetAllField();
+    $("#exampleModal").modal('hide')
 });
