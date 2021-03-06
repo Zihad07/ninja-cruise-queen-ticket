@@ -128,8 +128,8 @@ bookNowBtn.addEventListener('click', function(e) {
         <p><strong>Flying From : </strong> ${flyingFrom.value}</p>
         <p><strong>Flying To : </strong> ${flyingTo.value}</p>
         <p><strong>Departure Time : </strong> ${departureTime.value} <strong>Return Time : </strong> ${departureTime.value}</p>
-        <p><strong>No of First Class ticker : </strong> ${noOfTicketFirstClass.value} <strong>Price : </strong>$ ${ getTicketPrice(FIRST_CLASS_TICKET_PRICE , getIntegerValue(noOfTicketFirstClass.value))}</p>
-        <p><strong>No of Economy Class ticker : </strong> ${noOfTicketEconomy.value} <strong>Price : </strong>$ ${ getTicketPrice(ECONOMY_TICKET_PRICE , getIntegerValue(noOfTicketEconomy.value))}</p>
+        <p><strong>No of First Class ticket : </strong> ${noOfTicketFirstClass.value} <strong>Price : </strong>$ ${ getTicketPrice(FIRST_CLASS_TICKET_PRICE , getIntegerValue(noOfTicketFirstClass.value))}</p>
+        <p><strong>No of Economy Class ticket : </strong> ${noOfTicketEconomy.value} <strong>Price : </strong>$ ${ getTicketPrice(ECONOMY_TICKET_PRICE , getIntegerValue(noOfTicketEconomy.value))}</p>
 
         <hr>
         <p><strong>Total Price with 10% VAT : </strong>$ ${totalPriceId.innerText}</p>
