@@ -25,6 +25,8 @@ const economyIncrementBtn = document.getElementById("economy-increment-btn");
 const economyDecrementBtn = document.getElementById("economy-decrement-btn");
 const noOfTicketEconomy = document.getElementById("no-of-ticket-economy");
 
+const bookNowBtn = document.getElementById('book-now-btn');
+
 //----------------------------------------------
 
 
@@ -85,4 +87,11 @@ economyIncrementBtn.addEventListener('click', function(e) {
 economyDecrementBtn.addEventListener('click', function(e) {
     // console.log(e.target.innerText);
     incrementDecrementBtn(noOfTicketEconomy, -1);
+});
+
+// Book now button event handler
+
+bookNowBtn.addEventListener('click', function(e) {
+    alert(e.target.innerText);
+    $("#myModal").modal()
 });

@@ -112,14 +112,14 @@ a.active {
 }
 
 .inp-width {
-    min-width: 300px;
+    min-width: 100px;
 }
 
 .plus-minus-btn {
     color: #3352F2;
     font-size: 30px;
     padding: 2px;
-    margin: 10px 5px 0px 0px;
+    margin: 23px 5px 0px 0px;
     word-spacing: 20px;
 }
 
@@ -152,8 +152,9 @@ a.active {
     background: #E33741;
     color: #fff;
     padding: 10px;
+    margin-top: 5px;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     cursor: pointer;
     font-weight: bold;
     transition: .2s ease-in-out;
@@ -161,4 +162,8 @@ a.active {
 
 .custom-btn:hover {
     background-color: #ed8a90;
+}
+
+#book-now-btn {
+    cursor: pointer;
 }
