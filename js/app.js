@@ -25,7 +25,7 @@ const economyIncrementBtn = document.getElementById("economy-increment-btn");
 const economyDecrementBtn = document.getElementById("economy-decrement-btn");
 const noOfTicketEconomy = document.getElementById("no-of-ticket-economy");
 
-
+//----------------------------------------------
 
 
 //----------------------------------------------
@@ -39,11 +39,16 @@ function getIntegerValue(number) {
     return parseInt(number);
 }
 
+
+function getSubTotalPrice() {
+    return (getIntegerValue(noOfTicketFirstClass.value) * FIRST_CLASS_TICKET_PRICE) + (getIntegerValue(noOfTicketEconomy.value) * ECONOMY_TICKET_PRICE);
+}
+
 function updateAllPrice() {
     // debug(eachPrice[indexPrice])
 
     // calculate subtotal,total price
-    subtotal = (getIntegerValue(noOfTicketFirstClass.value) * FIRST_CLASS_TICKET_PRICE) + (getIntegerValue(noOfTicketEconomy.value) * ECONOMY_TICKET_PRICE);
+    subtotal = getSubTotalPrice();
     chargeOfVat = (subtotal * TAX);
     totalPrice = (subtotal * TAX) + subtotal;
 
@@ -54,7 +59,7 @@ function updateAllPrice() {
     // updateTotalPrice();
 }
 
-function incrementDecrementBtn(quantity, currentPrice, noQuantity) {
+function incrementDecrementBtn(quantity, noQuantity) {
     let totalQuantity = getIntegerValue(quantity.value) + noQuantity;
     if (totalQuantity >= 0) {
         quantity.value = totalQuantity;
@@ -67,17 +72,17 @@ function incrementDecrementBtn(quantity, currentPrice, noQuantity) {
 
 firstClassIncrementBtn.addEventListener('click', function(e) {
     // console.log(e.target.innerText);
-    incrementDecrementBtn(noOfTicketFirstClass, FIRST_CLASS_TICKET_PRICE, 1);
+    incrementDecrementBtn(noOfTicketFirstClass, 1);
 });
 firstClassDecrementBtn.addEventListener('click', function(e) {
     // console.log(e.target.innerText);
-    incrementDecrementBtn(noOfTicketFirstClass, FIRST_CLASS_TICKET_PRICE, -1);
+    incrementDecrementBtn(noOfTicketFirstClass, -1);
 });
 economyIncrementBtn.addEventListener('click', function(e) {
     // console.log(e.target.innerText);
-    incrementDecrementBtn(noOfTicketEconomy, ECONOMY_TICKET_PRICE, 1);
+    incrementDecrementBtn(noOfTicketEconomy, 1);
 });
 economyDecrementBtn.addEventListener('click', function(e) {
     // console.log(e.target.innerText);
-    incrementDecrementBtn(noOfTicketEconomy, ECONOMY_TICKET_PRICE, -1);
+    incrementDecrementBtn(noOfTicketEconomy, -1);
 });
