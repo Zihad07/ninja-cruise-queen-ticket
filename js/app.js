@@ -143,7 +143,7 @@ bookNowBtn.addEventListener('click', function(e) {
 // Checkout Button Event  Handler
 
 checkOutBtn.addEventListener('click', function() {
-    alert('Congratulation, your tickets have been booked successfully. We will response to you by email.Thanks...:)');
     resetAllField();
     $("#exampleModal").modal('hide')
+    alert('Congratulation, your tickets have been booked successfully. We will response to you by email.Thanks...:)');
 });
